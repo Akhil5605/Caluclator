@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f3f5f7">
+  <meta name="description" content="A responsive standard and scientific calculator.">
+  <title>Calcura | Standard and Scientific Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="calculator" aria-label="Calcura calculator">
+      <header class="topbar">
+        <a class="brand" href="." aria-label="Calcura home">
+          <span class="brand-mark" aria-hidden="true">C</span>
+          <span>calcura</span>
+        </a>
+        <div class="topbar-actions">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-label">Ready</span>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle color theme">&#9788;</button>
+        </div>
+      </header>
+
+      <section class="display-panel" aria-live="polite">
+        <div class="display-meta">
+          <span id="angle-mode">DEG</span>
+          <span id="memory-indicator" class="memory-indicator">M</span>
+        </div>
+        <div class="expression" id="expression">0</div>
+        <div class="result" id="result">0</div>
+      </section>
+
+      <div class="toolbar">
+        <div class="mode-switch" role="group" aria-label="Calculator mode">
+          <button class="mode-button active" type="button" data-mode="standard">Standard</button>
+          <button class="mode-button" type="button" data-mode="scientific">Scientific</button>
+        </div>
+        <button class="history-button" id="history-toggle" type="button" aria-expanded="false"><span aria-hidden="true">&#8634;</span> History</button>
+      </div>
+
+      <div class="calculator-body">
+        <section class="keypad" aria-label="Calculator keypad">
+          <div class="scientific-keys" id="scientific-keys" aria-label="Scientific functions">
+            <button class="key function" data-action="inverse">2nd</button>
+            <button class="key function" data-value="sin">sin</button>
+            <button class="key function" data-value="cos">cos</button>
+            <button class="key function" data-value="tan">tan</button>
+            <button class="key function" data-value="ln">ln</button>
+            <button class="key function" data-value="log">log</button>
+            <button class="key function" data-value="sqrt">sqrt</button>
+            <button class="key function" data-value="^">x^y</button>
+            <button class="key function" data-value="pi">pi</button>
+            <button class="key function" data-value="e">e</button>
+          </div>
+
+          <div class="memory-keys">
+            <button class="key utility" data-action="memory-clear">MC</button>
+            <button class="key utility" data-action="memory-recall">MR</button>
+            <button class="key utility" data-action="memory-add">M+</button>
+            <button class="key utility" data-action="memory-subtract">M-</button>
+            <button class="key utility" data-action="backspace" aria-label="Backspace">&#9003;</button>
+          </div>
+
+          <div class="number-keys">
+            <button class="key clear" data-action="clear">AC</button>
+            <button class="key utility" data-action="toggle-sign">+/-</button>
+            <button class="key utility" data-value="%">%</button>
+            <button class="key operator" data-value="/">/</button>
+
+            <button class="key number" data-value="7">7</button>
+            <button class="key number" data-value="8">8</button>
+            <button class="key number" data-value="9">9</button>
+            <button class="key operator" data-value="*">x</button>
+
+            <button class="key number" data-value="4">4</button>
+            <button class="key number" data-value="5">5</button>
+            <button class="key number" data-value="6">6</button>
+            <button class="key operator" data-value="-">-</button>
+
+            <button class="key number" data-value="1">1</button>
+            <button class="key number" data-value="2">2</button>
+            <button class="key number" data-value="3">3</button>
+            <button class="key operator" data-value="+">+</button>
+
+            <button class="key number zero" data-value="0">0</button>
+            <button class="key number" data-value=".">.</button>
+            <button class="key equals" data-action="equals">=</button>
+          </div>
+        </section>
+
+        <aside class="history-panel" id="history-panel" aria-label="Calculation history">
+          <div class="history-heading">
+            <span>Recent calculations</span>
+            <button class="clear-history" id="clear-history" type="button">Clear</button>
+          </div>
+          <div class="history-list" id="history-list">
+            <p class="empty-history">Your calculations will appear here.</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="calculator-footer">
+        <span><kbd>Enter</kbd> to calculate</span>
+        <span>Precision mode: 12 digits</span>
+      </footer>
+    </section>
+
+    <aside class="intro-panel" aria-label="Calculator information">
+      <div class="eyebrow">Everyday math, elevated</div>
+      <h1>A calmer way to work through the numbers.</h1>
+      <p>From quick totals to trigonometric detours, Calcura keeps the essentials close and the interface quiet.</p>
+      <div class="feature-list">
+        <div class="feature-item"><span class="feature-icon">01</span><span><strong>Two modes</strong><small>Switch from fast arithmetic to scientific notation.</small></span></div>
+        <div class="feature-item"><span class="feature-icon">02</span><span><strong>Memory built in</strong><small>Keep a running value without losing your place.</small></span></div>
+        <div class="feature-item"><span class="feature-icon">03</span><span><strong>History at a glance</strong><small>Revisit your recent answers whenever you need them.</small></span></div>
+      </div>
+      <div class="signature">C / 2026</div>
+    </aside>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
